@@ -1,0 +1,115 @@
+@import "./vars";
+
+@mixin onPhone {
+  @media (max-width: 667px) {
+    @content;
+  }
+}
+
+@mixin onTabletAndDesktop {
+  @media (min-width: 667px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktopSmall {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesktopMiddle {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onDesktopWide {
+  @media (min-width: 1680px) {
+    @content;
+  }
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexJustifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexColumnAlignCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexJustifyAlignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexJustifyAlignBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin fontStyleMobileMenu {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: $main-dark-color;
+}
+
+@mixin fontStyleDesktopHeadear {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.08rem;
+}
+
+@mixin fontStyleMobileHeadear3 {
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+@mixin fontStyleMobileHeadear2 {
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $black-color;
+}
+
+@mixin fontStyleDesktopHeadear2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+@mixin gridFourPhotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0.6rem;
+}
+
+@mixin gridThreePhotos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0.6rem;
+}
