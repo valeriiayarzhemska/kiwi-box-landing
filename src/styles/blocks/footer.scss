@@ -1,0 +1,108 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.footer {
+  &__content {
+    display: none;
+    padding: 0 10rem;
+
+    @include onDesktopSmall {      
+      @include flexColumnAlignCenter;
+    }
+
+    @include onDesktopMiddle {
+      padding: 0 15rem;
+    }
+
+    @include onDesktopWide {      
+      padding: 0 21rem;
+    }
+  }
+
+  &__list {
+    @include flexJustifyAlignCenter;
+    width: 100%;
+    padding: 4.3rem 0;
+    gap: $gapMobile;
+    margin-bottom: $paddingMarginBlocksMobile;
+
+    @include onDesktopMiddle {
+      justify-content: space-between;
+    }
+  }
+
+  &__list-left-section,
+  &__list-right-section {
+    @include flexAlignCenter;
+    gap: $gapDesktop;
+  }
+
+  &__link {
+    @include fontStyleMobileMenu;
+  }
+
+  &__social {
+    display: flex;
+    gap: $gapMobile;
+  }
+
+  &__copyright {
+    @include flexJustifyAlignBetween;
+    width: 100%;
+  }
+
+  &__copyright > div > p {
+    font-size: 0.8rem;
+    color: $gray-color;
+  }
+
+  &__developed-by {
+    @include flexAlignCenter;
+    gap: 0.3rem;
+
+    @include onDesktopSmall {
+      gap: $gapMobile;
+    }
+  }
+
+  &__mobile {
+    &__content {
+      @include flexColumnAlignCenter;
+      padding: $paddingMarginBlocksMobile 0 1rem;
+  
+      @include onDesktopSmall {
+        display: none;
+      }
+    }
+  
+    &__list {
+      @include flexColumnAlignCenter;
+      gap: $gapMobile;
+      margin-bottom: $paddingMarginBlocksMobile;
+    }
+  
+    &__link {
+      @include fontStyleMobileMenu;
+    }
+  
+    &__social {
+      display: flex;
+      gap: $gapMobile;
+      margin-bottom: $paddingMarginBlocksMobile;
+    }
+  
+    &__copyright {
+      @include flexAlignCenter;
+      gap: 0.6rem;
+    }
+
+    &__copyright > div > p {
+      font-size: 0.6rem;
+    }
+  
+    &__developed-by {
+      @include flexAlignCenter;
+      gap: 0.3rem;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.page {
+  color: $main-dark-color;
+
+  &__container {
+    padding: 0 1rem;
+
+    @include onTablet {
+      padding: 0 5rem;
+    }
+
+    @include onDesktopSmall {
+      padding: 0 10rem;
+    }
+
+    @include onDesktopMiddle {
+      padding: 0 15rem;
+    }
+
+    @include onDesktopWide {
+      padding: 0 21rem;
+    }
+  }  
+
+  &__text > p {
+    line-height: 1.8rem;
+    color: $gray-color;
+
+    @include onTabletAndDesktop {
+      font-size: 1rem;
+      line-height: 1.3rem;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      width: 100%;
+      z-index: 1;
+      
+      color: $white-color;
+      text-align: center;
+      @include fontStyleDesktopHeadear;
+      text-transform: uppercase;
+  
+      border-radius: 3.6rem;
+      background-color: $mint-color;
+  
+      cursor: pointer;
+
+      @include onTabletAndDesktop {
+        display: inline-block;
+        padding: 1.3rem 0;
+        width: 17.5rem;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__titles {
+    @include flexJustifyAlignCenter;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.3rem;
+
+    @include onTabletAndDesktop {
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: $paddingTopBlocksMobile;
+    }
+  }
+
+  &__title > h2 {
+    @include fontStyleMobileHeadear2;
+    text-align: center;
+
+    @include onTabletAndDesktop {
+      @include fontStyleDesktopHeadear2;
+    }
+  }
+
+  &__title--subtitle > h4 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    color: $mint-color;
+
+    @include onTabletAndDesktop {
+      font-size: 0.9rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+}

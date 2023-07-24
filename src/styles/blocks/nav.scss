@@ -1,0 +1,168 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.nav {
+  &__content {    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 1rem;
+    z-index: 3;
+
+    @include flexJustifyAlignCenter;
+    background-color: $white-color;
+  }
+
+  &__list {
+    @include flexAlignCenter;
+    justify-content: space-between;
+    width: 100%;
+
+    @include onDesktopSmall {
+      @include flexJustifyCenter;
+      gap: 6.25rem;
+    }
+  }
+
+  &__item {
+    display: none;
+    @include fontStyleDesktopHeadear;
+
+    @include onDesktopSmall {
+      display: inline-block;
+      position: relative;
+      padding: 3.625rem 0;
+      cursor: pointer;
+    }
+  }
+
+  &__item::after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0;
+    top: 5px;
+    background: transparent;
+    transition: all 0.3s;
+  }
+
+  &__item:hover::after {
+    width: 100%;
+    background: $mint-color;
+  }
+
+  &__item:hover {
+    color: $mint-color;
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 6.375rem;
+    background-color: $white-color;
+    box-shadow: 10px 10px 30px 0px rgba(1, 163, 164, 0.15);
+    z-index: 1;
+
+    &__link {
+      display: block;
+      padding: 	1.8rem 1.25rem;
+      min-width: max-content;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.21875rem;
+      text-transform: uppercase;
+      color: $main-dark-color;
+    }
+
+    &__link:hover {
+      background-color: $light-green-color;
+    }
+  }
+
+  &__item--with-dropdown:hover .nav__dropdown {
+    display: block;
+  }
+
+  &__logo {
+    display: flex;
+    padding: 0.36rem 0;
+
+    @include onDesktopSmall {
+      padding: 0 0;
+    }
+
+    &__image {
+      height: 3.125rem;
+  
+      @include onDesktopSmall {
+        height: auto;
+      }
+    }  
+  }
+
+  &__icons {
+    @include onDesktopSmall {
+      display: none;
+    }
+  }
+
+  &__icons--undisplayed {
+    display: none;
+  }
+
+  &__content__mobile {
+    position: fixed;
+    top: $header-height-mobile;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 3.37rem;
+    z-index: 2;
+    background-color: $light-green-color;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+
+    &:target {
+      transition: transform 0.3s ease-out;
+      transform: translateX(0);
+    }
+
+    @include onDesktopSmall {
+      overflow: hidden;
+    }
+  }
+
+  &__list__mobile {
+    @include flexAlignCenter;
+    flex-direction: column;
+    gap: 1.56rem;
+  }
+
+  &__item__mobile {
+    font-family: Bebas Neue;
+    font-size: 1.25rem;
+    letter-spacing: 0.0625rem;
+  }
+
+  &__line {
+    display: inherit;
+  }
+
+  &__small-ellipse {
+    position: fixed;
+    bottom: 7.5rem;
+    right: 3.5rem;
+    z-index: -1;
+  }
+
+  &__big-ellipse {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+}

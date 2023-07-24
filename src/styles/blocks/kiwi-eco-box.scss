@@ -1,0 +1,121 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.kiwi-eco-box {  
+  @include flexColumnAlignCenter;
+
+  &__container {
+    position: relative;
+    @include flexColumnAlignCenter;
+    padding-top: $paddingTopBlocksMobile;
+
+    @include onTablet {
+      align-items: start;
+      padding-top: $paddingMarginBlocksDesktop;
+    }
+  }
+
+  &__subtitle-group {
+    @include flexColumnAlignCenter;
+    gap: 0.5rem;
+    margin-bottom: 1.3rem;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__title > h2 {
+    color: $black-color;
+    text-align: center;
+    font-size: 2rem;
+
+    @include onTablet {
+      margin-bottom: 8.5rem;
+      max-width: 66rem;
+      text-align: left;
+      font-size: 3.5rem;
+    }
+
+    @include onDesktopSmall {
+      font-size: 4rem;
+    }
+
+    @include onDesktopMiddle {
+      font-size: 4.7rem;
+    }
+
+    @include onDesktopWide {      
+      font-size: 6rem;
+    }
+  }
+
+  &__subtitle-cursive {
+    margin-bottom: 0.5rem;
+
+    @include onTablet {
+      position: absolute;
+      margin-bottom: 0;
+      width: max-content;
+      bottom: 3rem;
+    }
+
+    @include onTablet {
+      left: 15rem;
+    }
+    
+    @include onDesktopSmall {
+      left: 19rem;
+    }
+
+    @include onDesktopMiddle {   
+      left: 30rem;
+    }
+
+    @include onDesktopWide {   
+      left: 37rem;
+      bottom: 2rem;
+    }
+  }
+
+  &__subtitle-cursive > h3 {
+    font-family: 'Galada', serif;
+    font-size: 1.5rem;
+    background: linear-gradient(141deg, #74E6CF 0%, #C0E594 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include onTablet {   
+      font-size: 4rem;
+    }
+
+    @include onTablet {   
+      font-size: 3.5rem;
+    }
+
+    @include onDesktopWide {   
+      font-size: 4.5rem;
+    }
+  }
+
+  &__footprints {
+    margin-bottom: $paddingMarginBlocksMobile;
+
+    @include onTablet {
+      position: absolute;
+      top: 18rem;
+      margin-bottom: 0;
+    }
+
+    @include onDesktopSmall {
+      top: 10rem;
+      left: -9rem;
+    }
+
+    @include onDesktopWide {
+      top: 12rem;
+      left: -10rem
+    }
+  }
+}

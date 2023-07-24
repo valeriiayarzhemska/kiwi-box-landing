@@ -1,0 +1,429 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.header {
+  margin-bottom: 3.125rem;
+  background-image: linear-gradient(159deg, #FECA57 0%, #E3AA2D 100%);
+
+  &__titles {
+    position: relative;
+    @include flexAlignCenter;
+    flex-direction: column;
+    padding-top: 5rem;
+
+    @include onDesktopSmall {     
+      padding-top: 13.125rem;
+    }    
+  }
+
+  &__title {      
+    min-width: max-content;
+    text-align: center;
+
+    &__main {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+
+      @include onTabletAndDesktop {     
+        font-size: 4rem;
+      }
+
+      @include onDesktopSmall {     
+        font-size: 6rem;
+        letter-spacing: 0.3rem;
+      }
+    }
+
+    &__subtitle {
+      margin-bottom: 0.625rem;
+      color: $white-color;
+      font-family: 'Galada', cursive;
+      font-size: 1.5rem;
+      font-weight: 400;
+
+      @include onTabletAndDesktop {
+        display: block;
+        position: absolute;
+        min-width: max-content;        
+        font-size: 2.5rem;
+      }
+
+      @include onDesktopSmall {
+        font-size: 3.5rem;
+      }
+
+      @include onDesktopMiddle {
+        font-size: 4.5rem;
+      }
+    }
+
+    &__subtitle--span {
+      @include onTabletAndDesktop {     
+        display: block;
+        position: absolute;
+        min-width: max-content;
+        top: 3rem;
+        left: 9rem;
+      }
+
+      @include onDesktopSmall {
+        top: 4rem;
+      }
+
+      @include onDesktopMiddle {
+        top: 5.5rem;
+        left: 10rem;
+      }
+    }
+  }
+
+  &__title--subtitle {
+    @include onTabletAndDesktop {
+      position: relative;
+      top: -1.5rem;
+      left: 0rem;
+    }
+
+    @include onDesktopSmall {
+      left: 4rem;
+    }
+  }
+
+  &__bg-icons {
+    left: 0;
+    right: 0;
+    padding: 3.5rem $paddingTopBlocksMobile 0;
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onDesktopMiddle {
+      padding-top: 6.5rem;
+    }
+
+    &__list {
+      align-items: center;
+    }
+
+    &__item {
+      @include flexJustifyAlignCenter;
+      position: relative;
+    }
+
+    &__bg-circle {
+      display: contents;
+      position: relative;
+    }
+
+    &__icon {
+      position: absolute;
+    }
+
+    &__icon--box-with-cup {
+      width: 90%;
+    }
+
+    &__icon--wood {
+      width: 90%;
+    }
+
+    &__icon--pack {
+      top: -1rem;
+      width: 80%;
+    }
+
+    &__icon--jar {
+      top: -0.5rem;
+      width: 55%;
+    }
+
+    &__bg-element {
+      display: flex;
+      position: absolute;
+    }
+
+    &__bg-element--line-box-with-cup {
+      right: -14rem;
+      bottom: -7rem;
+      
+      @include onDesktopSmall {
+        right: -25rem;
+        bottom: -6rem;
+      }
+    }
+
+    &__bg-element--line-box-with-cup > svg {
+      width: 18rem;
+
+      @include onDesktopSmall {
+        width: 100%;
+      }
+    }
+
+    &__bg-element--line-wood {
+      top: -3rem;
+      right: -3rem;
+      transform: rotate(342deg);
+
+      @include onDesktopSmall {
+        right: -6rem;
+      }
+    }
+
+    &__bg-element--line-wood > svg {
+      width: 5rem;
+
+      @include onDesktopSmall {
+        width: 100%;
+      }
+    }
+
+    &__bg-element--line-pack {
+      left: -4rem;
+      bottom: -3rem;
+      transform: rotate(20deg);
+
+      @include onDesktopSmall {
+        left: -3rem;
+      }
+    }
+
+    &__bg-element--line-pack > svg {
+      width: 5rem;
+
+      @include onDesktopSmall {
+        width: 100%;
+      }
+    }
+
+    &__bg-element--line-jar {
+      left: -16rem;
+      bottom: -8rem;
+      transform: rotate(7deg);
+
+      @include onDesktopSmall {
+        left: -25rem;
+        bottom: -10rem;
+        transform: rotate(4deg);
+      }
+    }
+
+    &__bg-element--line-jar > svg {
+      width: 20rem;
+
+      @include onDesktopSmall {
+        width: 100%;
+      }
+    }
+
+    &__bg-element--circle-thin-pink {
+      top: 0;
+      left: 3rem;
+      height: 20%;
+    }
+
+    &__bg-element--circle-middle-mint {
+      left: 2.5rem;
+      bottom: 0rem;
+      height: 20%;
+    }
+
+    &__bg-element--circle-thin-mint {
+      top: -9rem;
+      left: -2rem;
+      height: 25%;
+
+      @include onTablet {
+        top: -4rem;
+      }
+
+      @include onDesktopMiddle {
+        top: -5rem;
+      }
+    }
+
+    &__bg-element--circle-bold-pink {
+      top: -8rem;
+      left: 0rem;
+      height: 25%;
+
+      @include onDesktopSmall {
+        left: 3rem;
+      }
+
+      @include onDesktopMiddle {
+        top: -1rem;
+        left: -1rem;
+      }
+
+      @include onDesktopWide {
+        top: -6rem;
+        left: -1rem;
+      }
+    }
+
+    &__bg-element--circle-thin-pink-big {
+      left: 0;
+      bottom: -1rem;
+      height: 30%;
+    }
+
+    &__bg-element--circle-thin-mint-little {
+      display: none;
+      top: -7rem;
+      left: 10rem;
+      height: 20%;
+
+      @include onDesktopMiddle {
+        display: flex;
+      }
+    }
+  }
+
+  &__main-image {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+
+    &__box {
+      width: 100%;
+    }
+  }
+
+  &__bg-icons__mobile {    
+    position: relative;
+
+    @include onTabletAndDesktop {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__bg-circle {
+      position: relative;
+
+      &__svg {
+        width: 4.125rem;
+        height: 4.125rem;
+      }
+    }
+
+    &__icon {      
+      position: absolute;
+    }
+
+    &__icon--box-with-cup {
+      top: 0.9rem;
+      left: 0.2rem;
+      width: 4rem;
+      transform: rotate(39deg);
+    }
+
+    &__icon--wood {
+      top: 0.4rem;
+      left: 0.1rem;
+      width: 4.2rem;
+      transform: rotate(357deg);
+    }
+
+    &__icon--pack {
+      top: -0.5rem;
+      left: 0.5rem;
+      width: 3.5rem;
+    }
+
+    &__icon--jar {
+      top: 0.3rem;
+      left: 1.1rem;
+      width: 2.1rem;
+      transform: rotate(26deg);
+    }
+
+    &__bg-element {
+      display: flex;
+      position: absolute;
+    }
+
+    &__bg-element--line-box {
+      top: 3.6rem;
+      transform: rotate(8deg);
+    }
+
+    &__bg-element--line-wood {
+      top: 4rem;
+      left: 3rem;
+    }
+
+    &__bg-element--line-pack {
+      top: 3.5rem;
+      left: 3.4rem;
+      transform: rotate(343deg);
+    }
+
+    &__bg-element--line-jar {
+      top: 3.5rem;
+      left: 1.3rem;
+    }
+
+    &__bg-element--circle-thin {
+      top: 5.7rem;
+      left: 1.3rem;
+      z-index: 1;
+    }
+
+    &__bg-element--circle-bold {
+      top: 5.8rem;
+      left: 0.9rem;
+    }
+  }
+
+  &__main-image__mobile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    @include onTabletAndDesktop {
+      display: none;
+      position: absolute;
+      top: 22.5rem;
+      left: 0;
+      right: 0;
+    }
+
+    &__bg-element {
+      position: absolute;
+    }
+
+    &__box {
+      width: 15rem;
+
+      @include onTabletAndDesktop {
+        width: 47rem;
+      }
+    }
+  }
+
+  &__button {
+    padding: 0 1rem;
+
+    &__link {
+      margin-bottom: 1.3rem;
+      
+      @include onTabletAndDesktop {
+        margin-bottom: 4.4rem;
+      }
+    }
+  }
+}
