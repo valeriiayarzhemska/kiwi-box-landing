@@ -69,9 +69,14 @@ gulp.task('deploy', function () {
   return gulp.src('dist/**/*').pipe(deploy());
 });
 
+export const start = gulp.task(
+  'default',
+  gulp.series('clean', gulp.parallel('styles', 'scripts'), 'serve'),
+);
+
 export const build = gulp.task(
   'build',
-  gulp.series('clean', gulp.parallel('styles', 'scripts'), 'serve'),
+  gulp.series('clean', gulp.parallel('styles', 'scripts')),
 );
 
 export default build;
