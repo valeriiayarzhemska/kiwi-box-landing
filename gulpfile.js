@@ -70,8 +70,8 @@ gulp.task('deploy', function () {
 });
 
 export const build = gulp.task(
-  'default',
-  gulp.series('clean', gulp.parallel('styles', 'scripts'), 'serve', 'deploy'),
+  'build',
+  gulp.series('clean', gulp.parallel('styles', 'scripts'), 'serve'),
 );
 
 export default build;
