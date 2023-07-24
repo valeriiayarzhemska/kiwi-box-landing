@@ -6,6 +6,7 @@ import cssnano from 'gulp-cssnano';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import cleanCSS from 'gulp-clean-css';
+import imagemin from 'gulp-imagemin';
 
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
@@ -26,6 +27,10 @@ const paths = {
   html: {
     src: '*.html',
     dest: 'dist/',
+  },
+  images: {
+    src: 'src/images/**/*.{png,jpg,jpeg,gif,svg}',
+    dest: 'dist/src/',
   },
 };
 
@@ -73,18 +78,25 @@ gulp.task('html', function () {
   return gulp.src(paths.html.src).pipe(gulp.dest(paths.html.dest));
 });
 
-gulp.task('deploy', function () {
-  return gulp.src('dist/**/*').pipe(deploy());
+gulp.task('images', function () {
+  return gulp
+    .src(paths.images.src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.images.dest));
 });
 
 export const start = gulp.task(
   'default',
-  gulp.series('clean', gulp.parallel('styles', 'scripts'), 'serve'),
+  gulp.series('clean', gulp.parallel('styles', 'scripts', 'images'), 'serve'),
 );
 
 export const build = gulp.task(
   'build',
-  gulp.series('clean', gulp.parallel('styles', 'scripts', 'html')),
+  gulp.series('clean', gulp.parallel('styles', 'scripts', 'images', 'html')),
 );
+
+gulp.task('deploy', function () {
+  return gulp.src('dist/**/*').pipe(deploy());
+});
 
 export default build;
