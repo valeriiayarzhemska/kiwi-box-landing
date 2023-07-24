@@ -2,7 +2,7 @@
 
 Welcome to the Kiwi Box Landing repository! This repository contains the source code for the Kiwi Box Landing page, a landing page for a subscription service that provides eco-friendly boxes.
 
-[DEMO LINK](https://valeriiayarzhemska.github.io/kiwi-box-landing/)
+### [DEMO LINK](https://valeriiayarzhemska.github.io/kiwi-box-landing/)
 
 ## Table of Contents
 
