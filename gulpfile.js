@@ -23,6 +23,10 @@ const paths = {
     src: 'src/scripts/*.js',
     dest: 'dist/js/',
   },
+  html: {
+    src: '*.html',
+    dest: 'dist/',
+  },
 };
 
 gulp.task('clean', async function () {
@@ -65,6 +69,10 @@ gulp.task('serve', function () {
   gulp.watch(paths.scripts.src, gulp.series('scripts'));
 });
 
+gulp.task('html', function () {
+  return gulp.src(paths.html.src).pipe(gulp.dest(paths.html.dest));
+});
+
 gulp.task('deploy', function () {
   return gulp.src('dist/**/*').pipe(deploy());
 });
@@ -76,7 +84,7 @@ export const start = gulp.task(
 
 export const build = gulp.task(
   'build',
-  gulp.series('clean', gulp.parallel('styles', 'scripts')),
+  gulp.series('clean', gulp.parallel('styles', 'scripts', 'html')),
 );
 
 export default build;
