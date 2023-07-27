@@ -48,7 +48,12 @@ cd kiwi-box-landing
 npm install
 
 
-4. Build the project using Gulp:
+4. Change the directory for main .css and .js files in index.html to make the project build and work for development:
+
+css/main.min.css --> dist/css/main.min.css
+js/main.min.js --> dist/js/main.min.js
+
+5. Build the project using Gulp:
 
 gulp
 
