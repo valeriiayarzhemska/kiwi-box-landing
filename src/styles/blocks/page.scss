@@ -11,10 +11,6 @@
       padding: 0 5rem;
     }
 
-    @include onDesktopSmall {
-      padding: 0 10rem;
-    }
-
     @include onDesktopMiddle {
       padding: 0 15rem;
     }

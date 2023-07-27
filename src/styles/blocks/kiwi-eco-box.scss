@@ -109,6 +109,11 @@
     }
 
     @include onDesktopSmall {
+      top: 17rem;
+      left: 45rem;
+    }
+
+    @include onDesktopMiddle {
       top: 10rem;
       left: -9rem;
     }

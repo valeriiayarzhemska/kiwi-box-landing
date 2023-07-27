@@ -8,12 +8,7 @@
   &__titles {
     position: relative;
     @include flexAlignCenter;
-    flex-direction: column;
-    padding-top: 5rem;
-
-    @include onDesktopSmall {     
-      padding-top: 13.125rem;
-    }    
+    flex-direction: column; 
   }
 
   &__title {      

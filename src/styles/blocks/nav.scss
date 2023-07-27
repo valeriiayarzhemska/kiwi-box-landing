@@ -3,16 +3,16 @@
 @import "../utils/vars";
 
 .nav {
-  &__content {    
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+  &__content {
+    margin-bottom: 1.3rem;
     padding: 0 1rem;
-    z-index: 3;
 
     @include flexJustifyAlignCenter;
     background-color: $white-color;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 4.3rem;
+    }
   }
 
   &__list {

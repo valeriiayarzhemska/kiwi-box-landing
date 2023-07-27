@@ -23,8 +23,12 @@
 
   @include onTabletAndDesktop {
     flex-direction: row;
-    gap: 6rem;
+    gap: 4rem;
     margin-bottom: $paddingTopBlocksMobile;
+  }
+
+  @include onDesktopSmall {    
+    gap: 6rem;
   }
 
   @include onDesktopMiddle {    

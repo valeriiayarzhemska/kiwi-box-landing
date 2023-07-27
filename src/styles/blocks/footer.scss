@@ -8,6 +8,7 @@
 
     @include onDesktopSmall {      
       @include flexColumnAlignCenter;
+      padding: 0 5rem;
     }
 
     @include onDesktopMiddle {
@@ -20,15 +21,11 @@
   }
 
   &__list {
-    @include flexJustifyAlignCenter;
+    @include flexJustifyAlignBetween;
     width: 100%;
     padding: 4.3rem 0;
     gap: $gapMobile;
     margin-bottom: $paddingMarginBlocksMobile;
-
-    @include onDesktopMiddle {
-      justify-content: space-between;
-    }
   }
 
   &__list-left-section,
@@ -39,6 +36,14 @@
 
   &__link {
     @include fontStyleMobileMenu;
+
+    @include onTabletAndDesktop {
+      font-size: 0.9rem;
+    }
+
+    @include onDesktopMiddle {
+      font-size: 1.1rem;
+    }
   }
 
   &__social {
@@ -49,6 +54,7 @@
   &__copyright {
     @include flexJustifyAlignBetween;
     width: 100%;
+    padding: 0.6rem 0;
   }
 
   &__copyright > div > p {

@@ -70,15 +70,15 @@
     width: 50%;
 
     @include onTabletAndDesktop {
-      width: 8rem;
-    }
-
-    @include onDesktopSmall {
       width: 10rem;
     }
 
-    @include onDesktopMiddle {
-      width: 18rem;
+    @include onDesktopSmall {
+      width: 14rem;
+    }
+
+    @include onDesktopWide {
+      width: 17rem;
     }
 
     &__png {
@@ -94,10 +94,6 @@
   &__titles {
     @include flexAlignCenter;
     gap: 1.3rem;
-  }
-
-  &__delimeter {
-    padding-left: 0.7rem;
   }
 
   &__bg-element {
@@ -116,7 +112,7 @@
 
     @include onDesktopSmall {
       display: block;      
-      left: -8rem;
+      left: -7rem;
       width: 15rem;
     }
 
